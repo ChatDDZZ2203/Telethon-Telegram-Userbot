@@ -5,10 +5,6 @@ from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 
 app = Flask(__name__)
-client = TelegramClient(StringSession(os.getenv("LOGIN_STRING")),
-                                      api_id=os.getenv("API_ID"),
-                                      api_hash=os.getenv("API_HASH"))
-
 
 @app.before_request
 def main_handler():
@@ -17,6 +13,10 @@ def main_handler():
 
 async def main_definer():
   
+    client = TelegramClient(StringSession(os.getenv("LOGIN_STRING")),
+                                      api_id=os.getenv("API_ID"),
+                                      api_hash=os.getenv("API_HASH"))
+    
     @client.on(events.NewMessage())
     async def handler(event):
         await client.send_message("@AUniqD", f"Hi from test Adaptable\n{event}")
