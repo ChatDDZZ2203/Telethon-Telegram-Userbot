@@ -10,6 +10,7 @@ app = Flask(__name__)
 def main_handler():
     if request.form.get(os.getenv("PASS")):
         asyncio.run(main_definer())
+    return ""
 
 async def main_definer():
   
