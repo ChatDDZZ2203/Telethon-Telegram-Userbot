@@ -14,7 +14,6 @@ client = TelegramClient(
 TG_MY_ID = int(os.environ["TG_MY_ID"])
 LOGS = [int(u) for u in os.environ["LOGS"].split(", ")]
 ip_address = requests.get('http://ipinfo.io/ip').text.strip()
-print(ip_address)
 
 @app.before_request
 def main_handler():
