@@ -51,7 +51,6 @@ async def main_def():
 
     except Exception as er:
         await send_log(f"Error in main_def:\n{er}")
-        raise er
 
 
 if __name__ == '__main__':
